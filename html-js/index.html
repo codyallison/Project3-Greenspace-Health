@@ -1,0 +1,84 @@
+<html lan="us">
+<head>
+    <meta charset="utf-8">
+    <title>Project 3 Data Ethics</title>
+    <link href="jquery-ui.css" rel="stylesheet">
+    <script src="external/jquery/jquery.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="logic.js"></script>
+    <style>
+        body{
+            font-family: "Trebuchet MS", sans-serif;
+            margin: 50px;
+        }
+        .demoHeaders {
+            margin-top: 2em;
+        }
+        #dialog-link {
+            padding: .4em 1em .4em 20px;
+            text-decoration: none;
+            position: relative;
+        }
+        #dialog-link span.ui-icon {
+            margin: 0 5px 0 0;
+            position: absolute;
+            left: .2em;
+            top: 50%;
+            margin-top: -8px;
+        }
+        #icons {
+            margin: 0;
+            padding: 0;
+        }
+        #icons li {
+            margin: 2px;
+            position: relative;
+            padding: 4px 0;
+            cursor: pointer;
+            float: left;
+            list-style: none;
+        }
+        #icons span.ui-icon {
+            float: left;
+            margin: 0 4px;
+        }
+        .fakewindowcontain .ui-widget-overlay {
+            position: absolute;
+        }
+        select {
+            width: 200px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <script type="text/javascript" src="logic.js"></script>
+    
+<!-------------------------------------------------------------------->
+<h2 class="demoHeaders">Menu</h2>
+<ul style="width:100px;" id="menu">
+	<li><div>Item 1</div></li>
+	<li><div>Item 2</div></li>
+	<li><div>Item 3</div>
+		<ul>
+			<li><div>Item 3-1</div></li>
+			<li><div>Item 3-2</div></li>
+			<li><div>Item 3-3</div></li>
+			<li><div>Item 3-4</div></li>
+			<li><div>Item 3-5</div></li>
+		</ul>
+	</li>
+	<li><div>Item 4</div></li>
+	<li><div>Item 5</div></li>
+</ul>
+
+<script>
+
+$( "#menu" ).menu();
+
+</script>
+
+</body>
+
+</html>
