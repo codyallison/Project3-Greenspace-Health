@@ -2,7 +2,7 @@ from pydoc import doc
 from flask import Flask, jsonify
 import json
 from pymongo import MongoClient
-
+from flask_cors import CORS
 
 
 #mongodb
@@ -14,6 +14,7 @@ healthandgreenspacedata = db['healthandgreenspacedata']
 # Flask Setup
 #################################################
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/api/health-green-data")
 def health_green_data():
