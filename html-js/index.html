@@ -5,7 +5,20 @@
     <link href="jquery-ui.css" rel="stylesheet">
     <script src="external/jquery/jquery.js"></script>
     <script src="jquery-ui.js"></script>
-    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+    <!-- Leaflet JavaScript code -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
     <style>
         body{
             font-family: "Trebuchet MS", sans-serif;
@@ -54,9 +67,6 @@
 
 
 <body>
-    
-    
-    
 <!-------------------------------------------------------------------->
 <h2 class="demoHeaders">Menu</h2>
 <ul style="width:100px;height:150px;overflow:auto;white-space:nowrap" id="menu">
@@ -270,7 +280,10 @@
 
 $( "#menu" ).menu();
 
-</script>
+</script>   
+    
+
+<div id="map"></div>
 <script type="text/javascript" src="logic.js"></script>
 </body>
 
