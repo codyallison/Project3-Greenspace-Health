@@ -68,6 +68,7 @@
 
 <body>
 <!-------------------------------------------------------------------->
+<div id="map">
 <h2 class="demoHeaders">Menu</h2>
 <ul style="width:100px;height:150px;overflow:auto;white-space:nowrap" id="menu">
 	<li><div>AL</div> 
@@ -168,7 +169,7 @@
     <li><div>MO</div> 
         <ul>
             <li><div id="MO-Jackson" onclick="getLocation(this.id)">Jackson-Kansas City</div></li>
-            <li><div id="MO-St-Louis" onclick="getLocation(this.id)">St. Louis- Saint Louis</div></li>
+            <li><div id="MO-St. Louis" onclick="getLocation(this.id)">St. Louis- Saint Louis</div></li>
          </ul>
     </li>
     <li><div>NC</div> 
@@ -282,8 +283,20 @@ $( "#menu" ).menu();
 
 </script>   
     
+<div id="dataBox">
+    <p id="state"></p>
+    <p id="city"></p>
+    <p id="county"></p>
+    <p id="population"></p>
+    <p id="greenspace_per_capita"></p>
+    <p id="HighBloodPressureCrdPrv"></p>
+    <p id="HighBloodPressureAgeAdjPrv"></p>
+    <p id="HighCholesterolCrdPrv"></p>
+    <p id="HighCholesterolAgeAdjPrv"></p>
+    
 
-<div id="map"></div>
+</div>
+</div>
 <script type="text/javascript" src="logic.js"></script>
 </body>
 
