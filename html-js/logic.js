@@ -78,7 +78,7 @@ allCrudeBP = []
 allAgeCholesterol = []
 allCrudeCholesterol = []
 
-  function createScatter(x) {
+function createScatter(x) {
     data.then(function(d) {
         for (let i=0;i< 32;i++) {
             allAgeBP.push(d[i].measurements.HighBloodPressureAgeAdjPrv)
