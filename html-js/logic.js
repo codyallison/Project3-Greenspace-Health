@@ -71,3 +71,66 @@ let myMap = L.map("map", {
   }).addTo(myMap);
 
   startingData()
+
+allGPC = []
+allAgeBP = []
+allCrudeBP = []
+allAgeCholesterol = []
+allCrudeCholesterol = []
+
+  function createScatter(x) {
+    data.then(function(d) {
+        for (let i=0;i< 32;i++) {
+            allAgeBP.push(d[i].measurements.HighBloodPressureAgeAdjPrv)
+            allCrudeBP.push(d[i].measurements.HighBloodPressureCrdPrv)
+            allAgeCholesterol.push(d[i].measurements.HighCholesterolAgeAdjPrv)
+            allCrudeCholesterol.push(d[i].measurements.HighCholesterolCrdPrv)
+            allGPC.push(d[i].greenspace_per_capita)
+        }
+    })
+    console.log(allGPC)
+    console.log(allCrudeBP)
+    console.log(allAgeBP)
+    console.log(allAgeCholesterol)
+    console.log(allCrudeCholesterol)
+
+
+    // Create our first trace
+    let trace1 = {
+        x: allGPC,
+        y: allCrudeBP,
+        type: "scatter"
+    };
+  
+    // Create our second trace
+    let trace2 = {
+        x: allGPC,
+        y: allAgeBP,
+        type: "scatter"
+    };
+  
+    let trace3 = {
+        x: allGPC,
+        y: allCrudeCholesterol,
+        type: "scatter"
+    };
+  
+    // Create our second trace
+    let trace4 = {
+        x: allGPC,
+        y: allAgeCholesterol,
+        type: "scatter"
+    };
+  
+    var layout = {
+      title:'Heath Measures Vs. Green Space Per Capita'
+    };
+  
+    // The data array consists of both traces
+    let allScatterData = [trace1, trace2, trace3, trace4];
+  
+    
+    // This will use default parameters for the layout
+    Plotly.newPlot("plot", allScatterData, layout);
+    }
+createScatter()
