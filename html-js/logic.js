@@ -78,7 +78,7 @@ allCrudeBP = []
 allAgeCholesterol = []
 allCrudeCholesterol = []
 
-function createScatter(x) {
+function createScatter() {
     data.then(function(d) {
         for (let i=0;i< 32;i++) {
             allAgeBP.push(d[i].measurements.HighBloodPressureAgeAdjPrv)
@@ -87,50 +87,54 @@ function createScatter(x) {
             allCrudeCholesterol.push(d[i].measurements.HighCholesterolCrdPrv)
             allGPC.push(d[i].greenspace_per_capita)
         }
-    })
-    console.log(allGPC)
-    console.log(allCrudeBP)
-    console.log(allAgeBP)
-    console.log(allAgeCholesterol)
-    console.log(allCrudeCholesterol)
 
 
     // Create our first trace
     let trace1 = {
         x: allGPC,
         y: allCrudeBP,
-        type: "scatter"
+        mode: 'markers',
+        type: "scatter", 
+        name: 'High Blood Pressure (Crude)'
     };
   
     // Create our second trace
     let trace2 = {
         x: allGPC,
         y: allAgeBP,
-        type: "scatter"
+        mode: 'markers',
+        type: "scatter",
+        name: 'High Blood Pressure (Age Adjusted)'
     };
-  
+    // Create our third trace
     let trace3 = {
         x: allGPC,
         y: allCrudeCholesterol,
-        type: "scatter"
+        mode: 'markers',
+        type: "scatter",
+        name: 'High Cholesterol (Crude)'
     };
   
-    // Create our second trace
+    // Create our fourth trace
     let trace4 = {
         x: allGPC,
         y: allAgeCholesterol,
-        type: "scatter"
+        mode: 'markers',
+        type: "scatter",
+        name: 'High Cholesterol (Age Adjusted)'
     };
   
     var layout = {
-      title:'Heath Measures Vs. Green Space Per Capita'
+      title:'Heath Measures Vs. Green Space Per Capita',
+      xaxis: {title: 'Green Space per Capita (Million People)'},
+      yaxis: {title: 'Percent Population w/ Health Conditions'}
     };
   
-    // The data array consists of both traces
+    // The data array containing all 4 traces
     let allScatterData = [trace1, trace2, trace3, trace4];
   
     
-    // This will use default parameters for the layout
+    // plot in div with tag plot
     Plotly.newPlot("plot", allScatterData, layout);
-    }
+    })}
 createScatter()
