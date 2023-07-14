@@ -22,7 +22,7 @@ function startingData(){
 
 function changeData(state, county) {
     data.then(function(d) {
-        for (let i=0;i< 32;i++) {
+        for (let i=0;i< d.length;i++) {
             if (state == d[i].state && county == d[i].county) {
                 loadData(d[i])
             } else {
@@ -47,9 +47,9 @@ function loadData(selection) {
 
 function getLocation(x) {
     
-    data.then(function(d) {
-        console.log(d)
-    })
+    //data.then(function(d) {
+    //    console.log(d)
+    //})
      
     state_county = x.split('-')
     console.log(state_county)
@@ -80,7 +80,7 @@ allCrudeCholesterol = []
 
 function createScatter() {
     data.then(function(d) {
-        for (let i=0;i< 32;i++) {
+        for (let i=0;i< d.length;i++) {
             allAgeBP.push(d[i].measurements.HighBloodPressureAgeAdjPrv)
             allCrudeBP.push(d[i].measurements.HighBloodPressureCrdPrv)
             allAgeCholesterol.push(d[i].measurements.HighCholesterolAgeAdjPrv)
