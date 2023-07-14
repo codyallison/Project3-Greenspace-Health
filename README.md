@@ -8,17 +8,17 @@ This README serves as a starting guide to understand our data, code, and present
 -html-js: This folder has the front end resources required to load the webpage. This includes html, css, javascript and Jquery.
 
 ### Getting Started:
--Once you've downloaded the repository. You will see the code in the 'datacleanup.ipynb' generates the final data export in the 'Resources' folder 'data.json'
--Once the 'data.json' file is created, you will need to navigate to the 'Resources' folder in your python powershell and run the mongo import command (Available in the Code folder, file labeled 'dbcreation.ipynb')
--Upon successful import of the mongo DB, you may run the python app in the 'code' folder labeled 'app.py'. This will utalize the flask API, and access the mongo DB. 
--Finally, once your 'app.py' is running, in the 'html-js' folder open the 'index.html' and the full application will be running in your browser.
+- Once you've downloaded the repository. You will see the code in the 'datacleanup.ipynb' generates the final data export in the 'Resources' folder 'data.json'
+- Once the 'data.json' file is created, you will need to navigate to the 'Resources' folder in your python powershell and run the mongo import command (Available in the Code folder, file labeled 'dbcreation.ipynb')
+- Upon successful import of the mongo DB, you may run the python app in the 'code' folder labeled 'app.py'. This will utalize the flask API, and access the mongo DB. 
+- Finally, once your 'app.py' is running, in the 'html-js' folder open the 'index.html' and the full application will be running in your browser.
 
 ### Using the Webapp:
 If your webapp is up and running you should have a pretty intuitive UI in your browser. 
 The javascript will access a random datapoint from our data set and present a few views on that county. 
--Generate Metadata for that location
--Generate Barchart of the health data for that location
--Move the leaflet map to the coordinates available for that location
+- Generate Metadata for that location
+- Generate Barchart of the health data for that location
+- Move the leaflet map to the coordinates available for that location
 
 Upon using the menu and selecting a new location, the above mentioned metadata, bar chart, and map should update accordingly.
 
@@ -26,8 +26,8 @@ At the bottom we have a scatterplot diagram of all the data available, comparing
 
 ### Notes about Data & Data Cleanup:
 We wanted to explain some of the data and how we used it in this application. And note some important details to capture the nuance of the analysis.
--The CDC Places Data has 29 health measure, 2019 & 2020 data, as well as separate measures for Crude prevalence and Age-Adjusted prevalence. We decided to omit 2020 data as it was the year of the pandemic, and we felt we needed more data than we had available to accurately capture the impacts of COVID on these health metrics. Not to mention quarantine rules were complicated and limited access to many people's Green Space even if it traditionally was available. 2019 only had data for High Blood Pressure and High Cholesterol. Many of the health indicators started collection with the COVID-19 pandemic. 
--The UN Green Space data includes global readings from 2000 to 2014. We analyzed this data and it largely does not change in a significant manner. We took the average of these years data and assumed a steady growth to compare to 2019 health data. We narrowed this data down to US cities. Once, seeing this list we manually added the county to each city so we could merge it with the health data. Some cities were removed from the UN data because we were not confident we understood which U.S. location it cooresponded to in the county data from the CDC
+- The CDC Places Data has 29 health measure, 2019 & 2020 data, as well as separate measures for Crude prevalence and Age-Adjusted prevalence. We decided to omit 2020 data as it was the year of the pandemic, and we felt we needed more data than we had available to accurately capture the impacts of COVID on these health metrics. Not to mention quarantine rules were complicated and limited access to many people's Green Space even if it traditionally was available. 2019 only had data for High Blood Pressure and High Cholesterol. Many of the health indicators started collection with the COVID-19 pandemic. 
+- The UN Green Space data includes global readings from 2000 to 2014. We analyzed this data and it largely does not change in a significant manner. We took the average of these years data and assumed a steady growth to compare to 2019 health data. We narrowed this data down to US cities. Once, seeing this list we manually added the county to each city so we could merge it with the health data. Some cities were removed from the UN data because we were not confident we understood which U.S. location it cooresponded to in the county data from the CDC
 
 ### Credits/Resources
 Health data was obtained from the CDC Places initiative:
