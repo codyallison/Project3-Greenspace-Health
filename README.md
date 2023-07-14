@@ -3,9 +3,9 @@ In this repository you will find code for a data analysis of UN Green Space Data
 This README serves as a starting guide to understand our data, code, and presentation
 
 ### Contents:
--Resources: This folder has the data inputs and outputs used in this project (CSV, JSON, .XLSX, and .PNG)
--code: This folder has the jupyter notebook and python files that were used to clean and organize the data and export to mongoDB, and access this data via Flask API app
--html-js: This folder has the front end resources required to load the webpage. This includes html, css, javascript and Jquery.
+- Resources: This folder has the data inputs and outputs used in this project (CSV, JSON, .XLSX, and .PNG)
+- code: This folder has the jupyter notebook and python files that were used to clean and organize the data and export to mongoDB, and access this data via Flask API app
+- html-js: This folder has the front end resources required to load the webpage. This includes html, css, javascript and Jquery.
 
 ### Getting Started:
 - Once you've downloaded the repository. You will see the code in the 'datacleanup.ipynb' generates the final data export in the 'Resources' folder 'data.json'
