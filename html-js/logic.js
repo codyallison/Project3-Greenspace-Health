@@ -8,13 +8,15 @@ let data = d3.json(url).then(function(data) {
 function startingData(){
 
  data.then(function(d) {
-
-    let city = d[30].city
-    let county = d[30].county
-    let state = d[30].state
-    let gpc = d[30].greenspace_per_capita
-    let population = d[30].population
+    let x = Math.floor(Math.random() * d.length)
+    let city = d[x].city
+    let county = d[x].county
+    let state = d[x].state
+    let gpc = d[x].greenspace_per_capita
+    let population = d[x].population
     
+    loadData(d[x])
+    createGraph(d[x])
     console.log(city,county,state,gpc,population)
 })
 }
@@ -25,15 +27,32 @@ function changeData(state, county) {
         for (let i=0;i< d.length;i++) {
             if (state == d[i].state && county == d[i].county) {
                 loadData(d[i])
+                createGraph(d[i])
             } else {
-                console.log(state, county)
+                
             }
         }
     })
 }
 
+function createGraph(selection) {
+    let trace5 = {
+        x: Object.keys(selection.measurements),
+        y: Object.values(selection.measurements),
+        type: 'bar'
+
+    }
+    let layout = {
+        title: `Health Metrics for ${selection.county} County, ${selection.state}`
+    }
+
+    let barGraphData = [trace5]
+
+    Plotly.newPlot('bar', barGraphData, layout)
+}
+
 function loadData(selection) {
-    console.log(selection)
+    
     document.getElementById('state').innerText = `${selection.city}, ${selection.state}` 
     document.getElementById('county').innerText = `${selection.county} County`
     document.getElementById('population').innerText = `Population: ${selection.population}`
@@ -77,6 +96,8 @@ allAgeBP = []
 allCrudeBP = []
 allAgeCholesterol = []
 allCrudeCholesterol = []
+
+
 
 function createScatter() {
     data.then(function(d) {
