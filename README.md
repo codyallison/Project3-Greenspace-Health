@@ -9,7 +9,8 @@ This README serves as a starting guide to understand our data, code, and present
 
 ### Getting Started:
 - Once you've downloaded the repository. You will see the code in the 'datacleanup.ipynb' generates the final data export in the 'Resources' folder 'data.json'
-- Once the 'data.json' file is created, you will need to navigate to the 'Resources' folder in your python powershell and run the mongo import command (Available in the Code folder, file labeled 'dbcreation.ipynb')
+- Once the 'data.json' file is created, you will need to navigate to the 'Resources' folder in your python powershell and run the mongo import command (see below Available in the Code folder, file labeled 'dbcreation.ipynb')
+mongoimport --type json -d met -c healthandgreenspacedata --drop --jsonArray data.json
 - Upon successful import of the mongo DB, you may run the python app in the 'code' folder labeled 'app.py'. This will utalize the flask API, and access the mongo DB. 
 - Finally, once your 'app.py' is running, in the 'html-js' folder open the 'index.html' and the full application will be running in your browser.
 
