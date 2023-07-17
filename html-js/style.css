@@ -8,9 +8,17 @@ body {
 #map {
   height: 100%;
   position: relative;
-  top: 150px;
+  top: -150px;
   left: -20px;
   z-index: -1;
+}
+
+#menu {
+  width:100px;
+  height:200px;
+  overflow:auto;
+  white-space:nowrap;
+  z-index: 2;
 }
 
 .dataBox {
@@ -18,14 +26,14 @@ body {
 }
 
 #bar {
-  position: relative;
+  position: absolute;
   height: 380px;
   width: 900px;
-  top: -1075px;
   left: 600px;
+  top: 25px;
 }
 
 #plot {
   position: relative;
-  top: -225px;
+  top: -100px;
 }
