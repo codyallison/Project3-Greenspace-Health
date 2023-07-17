@@ -1,7 +1,7 @@
 <html lan="us">
 <head>
     <meta charset="utf-8">
-    <title>Green Space & Health Data</title>
+    <title>Project 3 Data Ethics</title>
     <link href="jquery-ui.css" rel="stylesheet">
     <script src="external/jquery/jquery.js"></script>
     <script src="jquery-ui.js"></script>
@@ -72,7 +72,7 @@
 
 
 <h2 class="demoHeaders">Menu</h2>
-<ul style="width:100px;height:150px;overflow:auto;white-space:nowrap" id="menu">
+<ul style="width:100px;height:250px;overflow:auto;white-space:nowrap;z-index: 2;" id="menu">
 	<li><div>AL</div> 
         <ul>
             <li><div id="AL-Jefferson" onclick="getLocation(this.id)">Jefferson-Birmingham</div></li>
@@ -91,7 +91,7 @@
     <li><div>CA</div> 
         <ul>
             <li><div id="CA-Fresno" onclick="getLocation(this.id)">Fresno-Fresno</div></li>
-            <li><div id="CA-Los Angles" onclick="getLocation(this.id)">Los Angeles-Los Angeles</div></li>
+            <li><div id="CA-Los Angeles" onclick="getLocation(this.id)">Los Angeles-Los Angeles</div></li>
             <li><div id="CA-Sacramento" onclick="getLocation(this.id)">Sacramento-Sacramento/Roseville</div></li>
             <li><div id="CA-San Diego" onclick="getLocation(this.id)">San Diego-San Diego</div></li>
             <li><div id="CA-San Francisco" onclick="getLocation(this.id)">San Francisco-San Francisco</div></li>
@@ -282,7 +282,7 @@
 
 <script>$( "#menu" ).menu();</script>   
     
-<div id="dataBox">
+<div id="dataBox" style="position: absolute;left:200px;top:50px;z-index: 2;">
     <p id="state"></p>
     <p id="city"></p>
     <p id="county"></p>
@@ -295,8 +295,8 @@
     
 
 </div>
-<div id="bar"></div>
 <div id="map"></div>
+<div id="bar"></div>
 
 <div id='plot'></div>
 <script type="text/javascript" src="logic.js"></script>
